@@ -2,7 +2,12 @@ name: GCE Deployment
 
 on: push
 
-uses: mattes/gce-deploy-action@v5
-with:
-  creds: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-  config: deploy.yml
+jobs:
+  deploy:
+    name: Deployment to Google Compute Engine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mattes/gce-deploy-action@v5.0.0
+        with:
+          creds: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          config: deploy.yml
