@@ -1,0 +1,10 @@
+common:
+  vars:
+    DOCKER_IMAGE: https://hub.docker.com/repository/docker/livjes/data-the-botler
+
+deploys:
+  - name: data-the-botler-deploy
+    region: us-central1
+    instance_group: instance-group-1
+    instance_template_base: instance-template-1
+    instance_template: data-the-botler-${{GITHUB_RUN_NUMBER}}
