@@ -1,5 +1,7 @@
 name: GCE Deployment
 
+on: push
+
 uses: mattes/gce-deploy-action@v5
 with:
   creds: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
